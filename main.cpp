@@ -5,12 +5,9 @@ using namespace std;
 
 class Animal {
 public:
-	Animal() {
-		cout << "Animal Instantiate" << endl;
-	}
 	virtual void makeSound() {};
-	virtual ~Animal() {
-		cout << "Animal Destroyed !" << endl;
+	~Animal() {
+		cout << "Animal Destroyed" << endl;
 	}
 };
 
