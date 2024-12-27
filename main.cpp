@@ -5,6 +5,9 @@ using namespace std;
 
 class Animal {
 public:
+	Animal(string name) {
+		cout << name << " Animal Instantiate" << endl;
+	}
 	virtual void makeSound() = 0;
 	~Animal() {
 		cout << "Animal Destroyed" << endl;
@@ -13,9 +16,7 @@ public:
 
 class Dog : public Animal {
 public:
-	Dog() {
-		cout << "Dog Instantiate" << endl;
-	}
+	Dog() : Animal("Dog") {};
 	void makeSound() {
 		cout << "Dog : meong meong !!" << endl;
 	};
@@ -26,9 +27,8 @@ public:
 
 class Cat : public Animal {
 public:
-	Cat() {
-		cout << "Cat Instantiate" << endl;
-	}
+	Cat() : Animal("Cat") {};
+
 	void makeSound() {
 		cout << "Cat : nyang ! nyang !" << endl;
 	}
@@ -39,9 +39,8 @@ public:
 
 class Cow : public Animal {
 public:
-	Cow() {
-		cout << "Cow Instantiate" << endl;
-	}
+	Cow() : Animal("Cow") {};
+
 	void makeSound() {
 		cout << "Cow : mow ! mow !" << endl;
 	}
