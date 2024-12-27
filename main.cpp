@@ -52,12 +52,8 @@ public:
 class Zoo {
 private:
 	Animal* animals[10]; // 동물 객체를 저장하는 포인터 배열
-	int animalCount;
+	int animalCount = 0;
 public:
-
-	Zoo() {
-		animalCount = 0;
-	}
 	// 동물을 동물원에 추가하는 함수
 	// - Animal 객체의 포인터를 받아 포인터 배열에 저장합니다.
 	// - 같은 동물이라도 여러 번 추가될 수 있습니다.
@@ -139,14 +135,13 @@ int main() {
 		animal[i] = createRandomAnimal();
 	}
 
-	Zoo* zoo = new Zoo();
+	Zoo zoo;
 
 	for (int i = 0; i < 10; i++) {
-		zoo->addAnimal(animal[i]);
+		zoo.addAnimal(animal[i]);
 	}
 
-	zoo->performActions();
+	zoo.performActions();
 
-	delete zoo;
 	return 0;
 }
