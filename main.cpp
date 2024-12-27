@@ -5,7 +5,7 @@ using namespace std;
 
 class Animal {
 public:
-	virtual void makeSound() {};
+	virtual void makeSound() = 0;
 	~Animal() {
 		cout << "Animal Destroyed" << endl;
 	}
