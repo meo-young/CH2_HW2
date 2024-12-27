@@ -99,10 +99,9 @@ public:
 
 Animal* createRandomAnimal()
 {
-	std::srand(std::time(nullptr)); // 현재 시간을 시드로 설정
 	int randNum = (std::rand() % 3); // [0, 2] 범위의 난수
 
-	Animal* animal{};
+	Animal* animal;
 
 	switch (randNum)
 	{
@@ -116,6 +115,7 @@ Animal* createRandomAnimal()
 		animal = new Cow();
 		break;
 	default:
+		animal = new Dog();
 		break;
 	}
 
