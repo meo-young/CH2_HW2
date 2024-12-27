@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 
 using namespace std;
 
@@ -55,18 +55,18 @@ public:
 
 class Zoo {
 private:
-	Animal* animals[10]; // µ¿¹° °´Ã¼¸¦ ÀúÀåÇÏ´Â Æ÷ÀÎÅÍ ¹è¿­
+	Animal* animals[10]; // ë™ë¬¼ ê°ì²´ë¥¼ ì €ìž¥í•˜ëŠ” í¬ì¸í„° ë°°ì—´
 	int animalCount;
 public:
 
 	Zoo() {
 		animalCount = 0;
 	}
-	// µ¿¹°À» µ¿¹°¿ø¿¡ Ãß°¡ÇÏ´Â ÇÔ¼ö
-	// - Animal °´Ã¼ÀÇ Æ÷ÀÎÅÍ¸¦ ¹Þ¾Æ Æ÷ÀÎÅÍ ¹è¿­¿¡ ÀúÀåÇÕ´Ï´Ù.
-	// - °°Àº µ¿¹°ÀÌ¶óµµ ¿©·¯ ¹ø Ãß°¡µÉ ¼ö ÀÖ½À´Ï´Ù.
-	// - ÀÔ·Â ¸Å°³º¯¼ö: Animal* (Ãß°¡ÇÒ µ¿¹° °´Ã¼)
-	// - ¹ÝÈ¯°ª: ¾øÀ½
+	// ë™ë¬¼ì„ ë™ë¬¼ì›ì— ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜
+	// - Animal ê°ì²´ì˜ í¬ì¸í„°ë¥¼ ë°›ì•„ í¬ì¸í„° ë°°ì—´ì— ì €ìž¥í•©ë‹ˆë‹¤.
+	// - ê°™ì€ ë™ë¬¼ì´ë¼ë„ ì—¬ëŸ¬ ë²ˆ ì¶”ê°€ë  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+	// - ìž…ë ¥ ë§¤ê°œë³€ìˆ˜: Animal* (ì¶”ê°€í•  ë™ë¬¼ ê°ì²´)
+	// - ë°˜í™˜ê°’: ì—†ìŒ
 	void addAnimal(Animal* animal) {
 		if (animalCount >= 10)
 			return;
@@ -75,21 +75,21 @@ public:
 		animalCount++;
 	};
 
-	// µ¿¹°¿ø¿¡ ÀÖ´Â ¸ðµç µ¿¹°ÀÇ Çàµ¿À» ¼öÇàÇÏ´Â ÇÔ¼ö
-	// - ¸ðµç µ¿¹° °´Ã¼¿¡ ´ëÇØ ¼øÂ÷ÀûÀ¸·Î ¼Ò¸®¸¦ ³»°í ¿òÁ÷ÀÌ´Â µ¿ÀÛÀ» ½ÇÇàÇÕ´Ï´Ù.
-	// - ÀÔ·Â ¸Å°³º¯¼ö: ¾øÀ½
-	// - ¹ÝÈ¯°ª: ¾øÀ½
+	// ë™ë¬¼ì›ì— ìžˆëŠ” ëª¨ë“  ë™ë¬¼ì˜ í–‰ë™ì„ ìˆ˜í–‰í•˜ëŠ” í•¨ìˆ˜
+	// - ëª¨ë“  ë™ë¬¼ ê°ì²´ì— ëŒ€í•´ ìˆœì°¨ì ìœ¼ë¡œ ì†Œë¦¬ë¥¼ ë‚´ê³  ì›€ì§ì´ëŠ” ë™ìž‘ì„ ì‹¤í–‰í•©ë‹ˆë‹¤.
+	// - ìž…ë ¥ ë§¤ê°œë³€ìˆ˜: ì—†ìŒ
+	// - ë°˜í™˜ê°’: ì—†ìŒ
 	void performActions() {
 		for (int i = 0; i < animalCount; i++) {
 			animals[i]->makeSound();
 		}
 	};
 
-	// Zoo ¼Ò¸êÀÚ
-	// - Zoo °´Ã¼°¡ ¼Ò¸êµÉ ¶§, µ¿¹° º¤ÅÍ¿¡ ÀúÀåµÈ ¸ðµç µ¿¹° °´Ã¼ÀÇ ¸Þ¸ð¸®¸¦ ÇØÁ¦ÇÕ´Ï´Ù.
-	// - ¸Þ¸ð¸® ´©¼ö¸¦ ¹æÁöÇÏ±â À§ÇØ µ¿Àû ÇÒ´çµÈ Animal °´Ã¼¸¦ `delete` ÇÕ´Ï´Ù.
-	// - ÀÔ·Â ¸Å°³º¯¼ö: ¾øÀ½
-	// - ¹ÝÈ¯°ª: ¾øÀ½
+	// Zoo ì†Œë©¸ìž
+	// - Zoo ê°ì²´ê°€ ì†Œë©¸ë  ë•Œ, ë™ë¬¼ ë²¡í„°ì— ì €ìž¥ëœ ëª¨ë“  ë™ë¬¼ ê°ì²´ì˜ ë©”ëª¨ë¦¬ë¥¼ í•´ì œí•©ë‹ˆë‹¤.
+	// - ë©”ëª¨ë¦¬ ëˆ„ìˆ˜ë¥¼ ë°©ì§€í•˜ê¸° ìœ„í•´ ë™ì  í• ë‹¹ëœ Animal ê°ì²´ë¥¼ `delete` í•©ë‹ˆë‹¤.
+	// - ìž…ë ¥ ë§¤ê°œë³€ìˆ˜: ì—†ìŒ
+	// - ë°˜í™˜ê°’: ì—†ìŒ
 	~Zoo() {
 		for (int i = 0; i < animalCount; i++) {
 			delete animals[i];
@@ -99,8 +99,8 @@ public:
 
 Animal* createRandomAnimal()
 {
-	std::srand(std::time(nullptr)); // ÇöÀç ½Ã°£À» ½Ãµå·Î ¼³Á¤
-	int randNum = (std::rand() % 3); // [0, 2] ¹üÀ§ÀÇ ³­¼ö
+	std::srand(std::time(nullptr)); // í˜„ìž¬ ì‹œê°„ì„ ì‹œë“œë¡œ ì„¤ì •
+	int randNum = (std::rand() % 3); // [0, 2] ë²”ìœ„ì˜ ë‚œìˆ˜
 
 	Animal* animal{};
 
